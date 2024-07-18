@@ -6,10 +6,9 @@ const loginText = {
 }
 
 const inputStyle = {
-    width: '274px',
     '&:focus': {
         border: '1px solid #E7463F'
-      },
+     },
 }
 
 const inputBorder = {

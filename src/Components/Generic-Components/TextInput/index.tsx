@@ -16,7 +16,7 @@ import { CustomTextField } from "../../Modular-Components/Auth/styled-components
  * @param extraProps - Extra properties for the input field.
  * @returns JSX.Element
  */
-const CustomTextInput = ({ margin = 'normal', fullWidth, id, name, size = 'medium', label, InputProps, type, extraProps }: TextInputInterface) => {
+const CustomTextInput = ({ margin = 'normal', fullWidth, id, name, size = 'medium', label, InputProps, type, extraProps,sx }: TextInputInterface) => {
     // Determine the input type based on whether it is a password field and showPassword flag
     const inputType = type === 'password' ? extraProps.showPassword ? 'text' : 'password' : type;
     console.log("input type", inputType, extraProps);
@@ -24,7 +24,7 @@ const CustomTextInput = ({ margin = 'normal', fullWidth, id, name, size = 'mediu
     return (
         <CustomTextField
             margin={margin}
-            sx={inputStyle}
+            sx={sx ? {...inputStyle, sx} : {...inputStyle}}
             fullWidth={fullWidth}
             id={id}
             name={name}

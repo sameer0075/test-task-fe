@@ -65,6 +65,7 @@ const AuthLayout = () => {
                                         InputProps={{
                                             style: inputBorder
                                         }}
+                                        sx={{width: '274px'}}
                                     />
                                 </Box>
 
@@ -72,11 +73,11 @@ const AuthLayout = () => {
                                 <Box sx={{ mb: 0.1 }}>
                                     <CustomTextInput
                                         margin="normal"
-                                        sx={inputStyle}
                                         fullWidth={true}
                                         name="password"
                                         type="password"
                                         id="password"
+                                        sx={{width: '274px'}}
                                         label={
                                             <Box sx={inputLabel}>
                                                 <LockOutlinedIcon />

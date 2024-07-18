@@ -21,7 +21,7 @@ function App() {
 
   return (
     // Render the App component
-    <div className="App">
+    <div>
       {/* Render the BrowserRouter component */}
       <BrowserRouter>
         {/* Render the Routes component */}

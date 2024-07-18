@@ -1,5 +1,5 @@
 import DashboardLayout from "../Components/Generic-Components/DashboardLayout";
-import Auth from "../Components/Modular-Components/Auth";
+import AuthPage from "../pages/Auth";
 import Dashboard from "../pages/Dashboard";
 import Issues from "../pages/Issues";
 import NotFoundPage from "../pages/NotFound";
@@ -15,7 +15,16 @@ export const PublicRoutes = [
 		// The path for the root route
 		path: "/",
 		// The component for the root route
-		component: <Auth />,
+		component: <AuthPage />,
+	},
+	{
+		// The path for the issues route
+		path: "/issues",
+		// The component for the issues route
+		// The DashboardLayout component is wrapped around the Issues component
+		component: <DashboardLayout>
+			<Issues />
+		</DashboardLayout>,
 	},
 	{
 		// The path for the not found route

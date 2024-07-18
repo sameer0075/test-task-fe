@@ -6,11 +6,11 @@ const DashboardLayoutRoot = experimentalStyled('div')(
   ({ theme }) => (
     {
       // Set the background color to the default background color from the theme.
-      backgroundColor: theme.palette.background.default,
+      backgroundColor: '#F7F8FA',
       // Set the display property to 'flex' to enable flexbox layout.
       display: 'flex',
       // Set the height property to '100%' to take up all available vertical space.
-      height: '100%',
+      height: '100vh',
       // Set the overflow property to 'hidden' to prevent content from overflowing.
       overflow: 'hidden',
       // Set the width property to '100%' to take up all available horizontal space.

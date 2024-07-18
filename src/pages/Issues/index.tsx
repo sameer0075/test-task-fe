@@ -1,4 +1,5 @@
 import { Container, Grid, Typography } from '@mui/material'
+import IssuesLayout from '../../Components/Modular-Components/Issues'
 
 /**
  * Issues component is the root component for the issues page.
@@ -10,21 +11,18 @@ const Issues = () => {
   return (
     // Container with padding
     <Container>
-      <Grid position="relative" sx={{ py: 4 }}>
+      {/* <Grid position="relative" sx={{ py: 4 }}>
         <Grid container spacing={2}>
-          {/* Grid item for the heading */}
           <Grid item xs={12} md={8}>
             <Grid item sx={{ paddingLeft: 2 }}>
-              {/* Typography component for the heading */}
-              <Typography>
-                {/* Heading text */}
-                Issues
-              </Typography>
+              <IssuesLayout />
             </Grid>
           </Grid>
 
         </Grid>
-      </Grid>
+      </Grid> */}
+
+    <IssuesLayout />
     </Container>
   )
 }
