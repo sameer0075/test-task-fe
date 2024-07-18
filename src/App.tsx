@@ -1,24 +1,27 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { getToken } from "./Utils/helper-functions";
+import { PrivateRoutes, PublicRoutes } from "./routes";
+import { RouteConfig } from "./routes/Interface/interface";
 
 function App() {
+  const token = getToken()
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <BrowserRouter>
+					<Routes>
+						{!token
+							? PublicRoutes.map(
+									({ component, path }: RouteConfig, index: number) => (
+										<Route key={index} path={path} element={component} />
+									)
+							  )
+							: PrivateRoutes.map(
+									({ component, path }: RouteConfig, index: number) => (
+										<Route key={index} path={path} element={component} />
+									)
+							  )}
+					</Routes>
+				</BrowserRouter>
     </div>
   );
 }
