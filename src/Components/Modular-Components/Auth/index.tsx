@@ -7,6 +7,7 @@ import { GradientCheckbox } from "./styled-components";
 import VisibilityOffOutlinedIcon from '@mui/icons-material/VisibilityOffOutlined';
 import VisibilityOutlinedIcon from '@mui/icons-material/VisibilityOutlined';
 import { useState } from "react";
+import CustomButton from "../../Generic-Components/Button";
 
 /**
  * AuthLayout component is the main layout for the authentication page.
@@ -107,8 +108,7 @@ const AuthLayout = () => {
                                 />
 
                                 {/* Login button */}
-                                <Button
-                                    type="submit"
+                                <CustomButton
                                     fullWidth
                                     variant="contained"
                                     sx={{
@@ -120,9 +120,8 @@ const AuthLayout = () => {
                                         display: 'block',
                                         background: 'linear-gradient(90deg, #E7463F, #EF8439)'
                                     }}
-                                >
-                                    <Typography sx={{ fontWeight: 'bold' }}>Log In</Typography>
-                                </Button>
+                                    title='Login'
+                                />
                             </Box>
                         </Box>
                     </Box>
