@@ -3,25 +3,39 @@ import { getToken } from "./Utils/helper-functions";
 import { PrivateRoutes, PublicRoutes } from "./routes";
 import { RouteConfig } from "./routes/Interface/interface";
 
+/**
+ * App component is the root component of the application.
+ * It renders different components based on whether the user is authenticated or not.
+ *
+ * @returns {JSX.Element} The App component.
+ */
 function App() {
-  const token = getToken()
+  // Get the token from the local storage
+  const token = getToken();
+
   return (
     <div className="App">
+      {/* Wrap the routes with the BrowserRouter component */}
       <BrowserRouter>
-					<Routes>
-						{!token
-							? PublicRoutes.map(
-									({ component, path }: RouteConfig, index: number) => (
-										<Route key={index} path={path} element={component} />
-									)
-							  )
-							: PrivateRoutes.map(
-									({ component, path }: RouteConfig, index: number) => (
-										<Route key={index} path={path} element={component} />
-									)
-							  )}
-					</Routes>
-				</BrowserRouter>
+        {/* Render the appropriate routes based on the token */}
+        <Routes>
+          {/* If the token is not present, render the public routes */}
+          {!token ? (
+            PublicRoutes.map(
+              ({ component, path }: RouteConfig, index: number) => (
+                <Route key={index} path={path} element={component} />
+              )
+            )
+          ) : (
+            // If the token is present, render the private routes
+            PrivateRoutes.map(
+              ({ component, path }: RouteConfig, index: number) => (
+                <Route key={index} path={path} element={component} />
+              )
+            )
+          )}
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
