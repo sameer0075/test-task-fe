@@ -2,6 +2,7 @@ import DashboardLayout from "../Components/Generic-Components/DashboardLayout";
 import Auth from "../Components/Modular-Components/Auth";
 import Dashboard from "../pages/Dashboard";
 import Issues from "../pages/Issues";
+import NotFoundPage from "../pages/NotFound";
 
 
 /**
@@ -16,6 +17,13 @@ export const PublicRoutes = [
 		// The component for the root route
 		component: <Auth />,
 	},
+	{
+		// The path for the not found route
+		// Catches all routes that are not defined in the other routes
+		path: "*",
+		// The component for the not found route
+		component: <NotFoundPage/> // Renders the NotFound component when the path is not found
+	}
 ];
 
 /**
@@ -26,7 +34,7 @@ export const PublicRoutes = [
 export const PrivateRoutes = [
 	{
 		// The path for the dashboard route
-		path: "/dashboard",
+		path: "/",
 		// The component for the dashboard route
 		// The DashboardLayout component is wrapped around the Dashboard component
 		component: <DashboardLayout>
