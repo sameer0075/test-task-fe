@@ -18,20 +18,25 @@ function App() {
     <div className="App">
       {/* Wrap the routes with the BrowserRouter component */}
       <BrowserRouter>
-					<Routes>
-						{!token
-							? PublicRoutes.map(
-									({ component, path }: RouteConfig, index: number) => (
-										<Route key={index} path={path} element={component} />
-									)
-							  )
-							: PrivateRoutes.map(
-									({ component, path }: RouteConfig, index: number) => (
-										<Route key={index} path={path} element={component} />
-									)
-							  )}
-					</Routes>
-				</BrowserRouter>
+        {/* Render the appropriate routes based on the token */}
+        <Routes>
+          {/* If the token is not present, render the public routes */}
+          {!token.token ? (
+            PublicRoutes.map(
+              ({ component, path }: RouteConfig, index: number) => (
+                <Route key={index} path={path} element={component} />
+              )
+            )
+          ) : (
+            // If the token is present, render the private routes
+            PrivateRoutes.map(
+              ({ component, path }: RouteConfig, index: number) => (
+                <Route key={index} path={path} element={component} />
+              )
+            )
+          )}
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
