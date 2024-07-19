@@ -1,4 +1,3 @@
-import { Typography } from '@mui/material'
 import CustomText from '../../Generic-Components/Text'
 
 /**

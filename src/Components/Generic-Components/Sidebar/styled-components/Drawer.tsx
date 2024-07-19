@@ -1,7 +1,8 @@
 import { styled } from "@mui/material/styles";
+import MuiDrawer from "@mui/material/Drawer";
+
 import OpenedSideBar from "./OpenedSideBar";
 import ClosedSideBar from "./ClosedSideBar";
-import MuiDrawer from "@mui/material/Drawer";
 
 
 const drawerWidth = 240;

@@ -1,8 +1,9 @@
 import { useState, useMemo, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+
 import { stableSort, getComparator } from '../Components/Generic-Components/Table/helper-functions';
 import { Order, Data, HeadCell } from '../Components/Generic-Components/Table/interface';
-import { useDispatch, useSelector } from 'react-redux';
-import { IssuesList } from '../redux/slices/issue-slice';
+import { IssuesList, deleteIssue } from '../redux/slices/issue-slice';
 
 /**
  * Hook for managing the state of a table component.
@@ -22,6 +23,10 @@ export function useTableState() {
     useEffect(() => {
         dispatch(IssuesList())
     }, [])
+
+    const removeIssue = (id: string) => {
+        dispatch(deleteIssue({id}))
+    }
 
     // Head labels for the table
     const headLabels: readonly HeadCell[] = [
@@ -55,6 +60,12 @@ export function useTableState() {
             numeric: false,
             disablePadding: true,
             label: 'Role',
+        },
+        {
+            id: 'actions',
+            numeric: false,
+            disablePadding: true,
+            label: 'Actions',
         },
     ];
 
@@ -143,5 +154,6 @@ export function useTableState() {
         handleChangeRowsPerPage,
         handleChangeDense: (event: React.ChangeEvent<HTMLInputElement>) => setDense(event.target.checked),
         isSelected,
+        removeIssue
     };
 }

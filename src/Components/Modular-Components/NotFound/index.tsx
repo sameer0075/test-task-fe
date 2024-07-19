@@ -1,5 +1,7 @@
 import type { FC } from 'react';
+
 import { Box, Container } from '@mui/material';
+
 import NotFoundText from './NotFoundText';
 import BackToHomeButton from './BackToHomeButton';
 import { containerBoxStyles, buttonBoxStyles } from './styles';

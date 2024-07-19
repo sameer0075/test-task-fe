@@ -1,5 +1,4 @@
-import { Select, MenuItem, FormControl, InputLabel } from "@mui/material";
-import { inputBorder } from "../../Modular-Components/Auth/styles";
+import { Select, MenuItem, FormControl, InputLabel, FormHelperText } from "@mui/material";
 import { CustomSelectInterface } from "./interface";
 
 /**
@@ -17,13 +16,13 @@ import { CustomSelectInterface } from "./interface";
  *   - onChange: The callback function to be called when the selected value changes.
  * @returns {JSX.Element} The rendered Select component.
  */
-function CustomSelect({ inputLabel, sx, options, value, onChange, name }: CustomSelectInterface) {
+function CustomSelect({ inputLabel, sx, options, value, onChange, name, error }: CustomSelectInterface) {
     return (
         <FormControl
         margin="normal"
         fullWidth
         size="small"
-
+        error={Boolean(error)}
     >
         <InputLabel id="demo-simple-select-label">
             {inputLabel}
@@ -51,6 +50,7 @@ function CustomSelect({ inputLabel, sx, options, value, onChange, name }: Custom
                 )
             ))}
         </Select>
+        {error && <FormHelperText>{error}</FormHelperText>}
     </FormControl>
 
     );

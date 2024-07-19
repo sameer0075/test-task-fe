@@ -7,6 +7,7 @@ import TablePagination from '@mui/material/TablePagination';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import Checkbox from '@mui/material/Checkbox';
+import DeleteIcon from '@mui/icons-material/Delete';
 
 
 import { EnhancedTableHead } from './helper-functions';
@@ -33,6 +34,7 @@ export default function CustomTable() {
     handleChangeRowsPerPage,  // Rows per page change handler
     handleChangeDense,  // Dense mode change handler
     isSelected,  // Check if row is selected
+    removeIssue,  // Remove issue handler
   } = useTableState();
 
   /**
@@ -68,7 +70,7 @@ export default function CustomTable() {
                     role="checkbox"
                     aria-checked={isItemSelected}
                     tabIndex={-1}
-                    key={row.id}
+                    key={index}
                     selected={isItemSelected}
                     sx={{
                       cursor: 'pointer',
@@ -109,6 +111,15 @@ export default function CustomTable() {
                         </TableCell>
                       ))
                     }
+                    <TableCell 
+                      component="th"
+                      id={labelId}
+                      scope="row"
+                      padding="none"
+                      align='center'
+                    >
+                        <DeleteIcon onClick={() => removeIssue(row.id)} sx={{color: '#E7463F'}}/>
+                    </TableCell>
                   </TableRow>
                 );
               })}

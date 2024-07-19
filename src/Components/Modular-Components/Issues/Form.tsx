@@ -1,4 +1,5 @@
 import { Box, Container, Grid } from "@mui/material";
+
 import CustomTextInput from "../../Generic-Components/TextInput";
 import { inputBorder } from "../Auth/styles";
 import CustomSwitch from "../../Generic-Components/CustomSwitch";
@@ -6,7 +7,7 @@ import CustomButton from "../../Generic-Components/Button";
 import CustomText from "../../Generic-Components/Text";
 import { assignButtonStyles, formContainerStyles, formHeadingStyles, formSubHeadingStyles, inputPropStyles } from "./styles";
 import CustomSelect from "../../Generic-Components/SelectInput";
-import { Formik } from "formik";
+import { Field, Formik } from "formik";
 import { issuesInitialState } from "../../../Schemas/initialStates";
 import { issuesSchema } from "../../../Schemas/schemas";
 import ActionButtons from "./ActionButtons";
@@ -23,7 +24,7 @@ function IssuesForm(props: any) {
         values,
         setFieldValue } = props
 
-
+        {console.log("errors", errors)}
     return (
         <Box sx={{ backgroundColor: 'white', padding: 2 }}>
             <Box sx={formContainerStyles}>
@@ -208,23 +209,36 @@ function IssuesForm(props: any) {
                     <Grid item xs={12}>
                         <Grid container spacing={2}>
                             <Grid item xs={12} sm={6} md={5} >
-                                <CustomSelect
+                            <Field
+                                name="user"
+                                as={CustomSelect}
+                                inputLabel="Select User"
+                                options={options.userOptions.map((user: any) => user)}
+                                sx={{ marginBottom: '16px' }}
+                                value={values.user}
+                                onChange={handleChange}
+                                error={Boolean(touched.user && errors.user)}
+                            />
+                                {/* <CustomSelect
                                     inputLabel="Select User"
                                     options={options.userOptions.map((user: any) => user)}
                                     sx={inputBorder}
                                     value={values.user}
+                                    error={Boolean(touched.user && errors.user)}
                                     onChange={handleChange}
                                     name="user"
-                                />
+                                /> */}
                             </Grid>
                             <Grid item xs={12} sm={6} md={5} >
-                                <CustomSelect
+                                <Field
+                                    name="role"
+                                    as={CustomSelect}
                                     inputLabel="Select Role"
                                     options={options.roleOptions}
                                     sx={inputBorder}
                                     value={values.role}
                                     onChange={handleChange}
-                                    name="role"
+                                    error={Boolean(touched.role && errors.role)}
                                 />
                             </Grid>
                             <Grid item xs={12} sm={6} md={2} sx={{ display: 'flex', alignItems: 'center' }}>

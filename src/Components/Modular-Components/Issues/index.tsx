@@ -1,7 +1,3 @@
-import { Container, Grid } from '@mui/material'
-import ActionButtons from './ActionButtons'
-import IssuesForm from './Form'
-import CustomTable from '../../Generic-Components/Table'
 import Form from './Form'
 
 /**
@@ -12,7 +8,6 @@ import Form from './Form'
  */
 const Issues = () => {
   return (
-
     <Form/>
   )
 }

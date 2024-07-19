@@ -29,6 +29,21 @@ export const saveIssue = createAsyncThunk(
 	}
 );
 
+export const deleteIssue = createAsyncThunk(
+	"delete/issue",
+	async (data: any, thunkAPI) => {
+		try {
+            const issues = sessionStorage.getItem('issues')
+			const resp = issues ? JSON.parse(issues) : [];
+			const filteredIssues = resp.filter((issue: any) => issue.id !== data.id);
+            sessionStorage.setItem('issues', JSON.stringify(filteredIssues))
+			return filteredIssues;
+		} catch (error: any) {
+			return thunkAPI.rejectWithValue(error.response.data);
+		}
+	}
+);
+
 const issuesSlice = createSlice({
 	name: "cars",
 	initialState,
@@ -54,6 +69,17 @@ const issuesSlice = createSlice({
 				state.issues = action.payload;
 			})
 			.addCase(IssuesList.rejected, (state, action: any) => {
+				const message: string = action.error.message;
+				state.isLoading = false;
+			})
+			.addCase(deleteIssue.pending, (state) => {
+				state.isLoading = true;
+			})
+			.addCase(deleteIssue.fulfilled, (state, action) => {
+				state.isLoading = false;
+				state.issues = action.payload;
+			})
+			.addCase(deleteIssue.rejected, (state, action: any) => {
 				const message: string = action.error.message;
 				state.isLoading = false;
 			})

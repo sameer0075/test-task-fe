@@ -13,6 +13,8 @@ const issuesSchema = Yup.object({
     description: Yup.string().max(255).required('Description is required'),
     repairDate: Yup.string().max(255).required('Repair Date is required'),
     timeEstimateHours: Yup.number().required('Time Estimate Hours is required'),
+    role: Yup.string().required('Role is required'),
+    user: Yup.object().required('User is required'),
 })
 
 export { authSchema, issuesSchema }

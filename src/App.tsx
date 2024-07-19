@@ -1,5 +1,6 @@
-import './App.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+
+import './App.css';
 import { PrivateRoutes, PublicRoutes } from './routes';
 import { RouteConfig } from './routes/Interface/interface';
 import { getToken } from './Utils/helper-functions';

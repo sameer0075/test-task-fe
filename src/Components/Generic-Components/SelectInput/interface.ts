@@ -5,4 +5,5 @@ export interface CustomSelectInterface {
   value?:any;
   onChange?: any;
   name?:string
+  error?: boolean
 }

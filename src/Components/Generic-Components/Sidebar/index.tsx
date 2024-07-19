@@ -1,9 +1,5 @@
+import { useState } from "react";
 import { useLocation } from "react-router-dom";
-
-import Header from "../Header";
-import ThemeSwitch from "./ThemeSwitch";
-import Drawer from "./styled-components/Drawer";
-import SidebarListItem from "./SidebarListItem";
 
 import Box from "@mui/material/Box";
 import List from "@mui/material/List";
@@ -20,8 +16,11 @@ import SettingsIcon from '@mui/icons-material/Settings';
 import NightlightRoundIcon from '@mui/icons-material/NightlightRound';
 import Brightness2Icon from '@mui/icons-material/Brightness2';
 import WbSunnyIcon from '@mui/icons-material/WbSunny';
-import { useState } from "react";
-import CustomSwitch from "../CustomSwitch";
+
+import Header from "../Header";
+import ThemeSwitch from "./ThemeSwitch";
+import Drawer from "./styled-components/Drawer";
+import SidebarListItem from "./SidebarListItem";
 
 /**
  * Type definition for a subsection in the sidebar.

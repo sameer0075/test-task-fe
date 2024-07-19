@@ -11,6 +11,7 @@ export interface Data {
     email: string;
     phone: string;
     role: string;
+    actions: any
 }
 
 export interface EnhancedTableProps {

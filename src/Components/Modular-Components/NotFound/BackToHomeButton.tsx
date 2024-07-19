@@ -1,6 +1,8 @@
 import { Link as RouterLink } from 'react-router-dom';
+
 import { buttonStyles } from './styles';
 import CustomButton from '../../Generic-Components/Button';
+import { getToken } from '../../../Utils/helper-functions';
 
 /**
  * A component that renders a button to go back to the home page.
@@ -13,12 +15,13 @@ import CustomButton from '../../Generic-Components/Button';
  * @returns {JSX.Element} The rendered component.
  */
 const BackToHomeButton = ({title}: any) => {
+  const token = getToken();
   return (
     <CustomButton
       // The button is a link that points to the home page
       component={RouterLink}
       // The path to the home page
-      to="/"
+      to={token.token ? "/dashboard" : "/"}
       // The variant of the button
       variant="outlined"
       // The style of the button
@@ -28,7 +31,7 @@ const BackToHomeButton = ({title}: any) => {
       // The font weight of the button
       fontWeight={'bold'}
     />
-
+ 
   )
 }
 

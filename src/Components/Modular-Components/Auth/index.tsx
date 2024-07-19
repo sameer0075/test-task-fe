@@ -1,12 +1,15 @@
+import { useState } from "react";
+
 import { Container, Grid, Box, FormControlLabel, IconButton, InputAdornment } from "@mui/material";
 import PermIdentityOutlinedIcon from '@mui/icons-material/PermIdentityOutlined';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
-import CustomTextInput from "../../Generic-Components/TextInput";
 import VisibilityOffOutlinedIcon from '@mui/icons-material/VisibilityOffOutlined';
 import VisibilityOutlinedIcon from '@mui/icons-material/VisibilityOutlined';
-import { useState } from "react";
-import CustomButton from "../../Generic-Components/Button";
 import { Formik } from "formik";
+
+
+import CustomTextInput from "../../Generic-Components/TextInput";
+import CustomButton from "../../Generic-Components/Button";
 import { authInitialState } from "../../../Schemas/initialStates";
 import { authSchema } from "../../../Schemas/schemas";
 import CustomText from "../../Generic-Components/Text";

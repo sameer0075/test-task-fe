@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import ReactSwitch from "react-switch";
-// import "./Switch.css";
+
 import LightModeIcon from '@mui/icons-material/LightMode';
 import NightsStayIcon from '@mui/icons-material/NightsStay';
+
 import { themeSwitchStyles } from "./styles";
+
 const SwitchComponent = () => {
   const [checked, setChecked] = useState(false);
   const handleChange = (nextChecked: boolean | ((prevState: boolean) => boolean)) => {
