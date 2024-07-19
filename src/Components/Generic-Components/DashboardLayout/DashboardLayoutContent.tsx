@@ -6,7 +6,7 @@ import { experimentalStyled } from "@mui/material";
  */
 const DashboardLayoutContent = experimentalStyled('div')({
   // Set the flex properties to take up all available space.
-  // flex: '1 1 auto',
+  flex: '1 1 auto',
   // Set the height to 100% of the parent element.
   height: '100%',
   // Enable auto scrolling for overflow content.

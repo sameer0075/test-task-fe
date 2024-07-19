@@ -1,8 +1,8 @@
-import { Container, Grid, Box, Typography, Button, FormControlLabel, Checkbox, styled, IconButton, InputAdornment } from "@mui/material";
+import { Container, Grid, Box, Typography, FormControlLabel, IconButton, InputAdornment } from "@mui/material";
 import PermIdentityOutlinedIcon from '@mui/icons-material/PermIdentityOutlined';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import CustomTextInput from "../../Generic-Components/TextInput";
-import { loginText, inputLabel, inputLabelText, inputBorder, inputStyle } from "./styles";
+import { loginText, inputLabel, inputLabelText, inputBorder } from "./styles";
 import { GradientCheckbox } from "./styled-components";
 import VisibilityOffOutlinedIcon from '@mui/icons-material/VisibilityOffOutlined';
 import VisibilityOutlinedIcon from '@mui/icons-material/VisibilityOutlined';
@@ -119,7 +119,7 @@ const AuthLayout = () => {
                                         height: 50,
                                         width: 280,
                                         display: 'block',
-                                        background: 'linear-gradient(90deg, #E7463F, #EF8439)'
+                                        background: 'linear-gradient(180deg, #E7463F, #EF8439)'
                                     }}
                                     title='Login'
                                 />

@@ -18,15 +18,6 @@ export const PublicRoutes = [
 		component: <AuthPage />,
 	},
 	{
-		// The path for the issues route
-		path: "/issues",
-		// The component for the issues route
-		// The DashboardLayout component is wrapped around the Issues component
-		component: <DashboardLayout>
-			<Issues />
-		</DashboardLayout>,
-	},
-	{
 		// The path for the not found route
 		// Catches all routes that are not defined in the other routes
 		path: "*",

@@ -16,7 +16,7 @@ const GradientCheckbox = styled(Checkbox)({
      * and add a gradient background when checked
      */
     '&.Mui-checked ~ .MuiIconButton-colorPrimary': {
-        backgroundImage: 'linear-gradient(90deg, #E7463F, #EF8439)',
+        backgroundImage: 'linear-gradient(180deg, #E7463F, #EF8439)',
         border: '1px solid #E7463F', // Border color when checked
     },
 });

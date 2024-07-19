@@ -61,7 +61,7 @@ const sections: Section[] = [
     items: [
       {
         title: "Dashboard",
-        path: "/dashboard",
+        path: "/",
         icon: <SpeedIcon fontSize="medium" />,
         subSections: [],
       },

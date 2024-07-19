@@ -1,5 +1,5 @@
 import type { FC } from 'react';
-import NotFound from '../../Components/Generic-Components/NotFound';
+import NotFound from '../../Components/Modular-Components/NotFound';
 
 /**
  * NotFoundPage component.

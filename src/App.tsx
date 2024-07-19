@@ -27,7 +27,7 @@ function App() {
         {/* Render the Routes component */}
         <Routes>
           {/* Render the public routes if the user is authenticated */}
-          {!token.token ? (
+          {token.token ? (
             PublicRoutes.map(({ component, path }: RouteConfig, index: number) => (
               <Route key={index} path={path} element={component} />
             ))

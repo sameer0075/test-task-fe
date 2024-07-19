@@ -52,6 +52,7 @@ const containerBoxStyles = {
 const buttonBoxStyles = {
   display: 'flex',
   justifyContent: 'center',
+  textAlign: 'center',
   mt: 6
 }
 

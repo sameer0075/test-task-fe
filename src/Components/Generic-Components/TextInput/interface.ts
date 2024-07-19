@@ -9,4 +9,7 @@ export interface TextInputInterface {
     InputProps?: any;
     type?: string;
     extraProps?: any;
+    multiline?: any;
+    rows?: number;
+    inputProps?: any
 }
