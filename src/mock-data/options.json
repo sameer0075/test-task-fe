@@ -1,0 +1,26 @@
+{
+  "priorityOptions": ["Low", "Medium", "High"],
+  "dcSwitchStatusOptions": ["On", "Off"],
+  "statusOptions": ["Active", "Inactive"],
+  "roleOptions": ["Admin", "Standard User"],
+  "userOptions": [
+    {
+      "id":"1",
+      "name": "John",
+      "email": "john@example.com",
+      "phone": "123-456-7890"
+    },
+    {
+      "id":"2",
+      "name": "Jacob",
+      "email": "jacob@example.com",
+      "phone": "234-567-8901"
+    },
+    {
+      "id":"3",
+      "name": "Jennifer",
+      "email": "jennifer@example.com",
+      "phone": "345-678-9012"
+    }
+  ]
+}
