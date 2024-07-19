@@ -1,6 +1,6 @@
 import DashboardLayout from "../Components/Generic-Components/DashboardLayout";
 import AuthPage from "../pages/Auth";
-import Dashboard from "../pages/Dashboard";
+import DashboardPage from "../pages/Dashboard";
 import Issues from "../pages/Issues";
 import NotFoundPage from "../pages/NotFound";
 
@@ -38,7 +38,7 @@ export const PrivateRoutes = [
 		// The component for the dashboard route
 		// The DashboardLayout component is wrapped around the Dashboard component
 		component: <DashboardLayout>
-			<Dashboard />
+			<DashboardPage />
 		</DashboardLayout>,
 	},
 	{

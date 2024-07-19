@@ -70,4 +70,21 @@ const listItemTextStyle = (open: boolean) =>{
   return { opacity: open ? 1 : 0 }
 }
 
-export { linkStyle , listItemStyle, listItemButtonStyle, listItemIconStyle, listItemTextStyle}
+const themeSwitchStyles =  {
+  uncheckedHandleIcon:{
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    height: "100%",
+    fontSize: 20,
+  },
+  checkedHandleIcon:{
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    height: "100%",
+    fontSize: 18,
+  }
+}
+
+export { linkStyle , listItemStyle, listItemButtonStyle, listItemIconStyle, listItemTextStyle, themeSwitchStyles}

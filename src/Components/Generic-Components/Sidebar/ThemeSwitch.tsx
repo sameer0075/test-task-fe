@@ -1,27 +1,49 @@
-import { Switch, alpha } from "@mui/material";
-import { styled} from "@mui/material/styles";
+import React, { useState } from "react";
+import ReactSwitch from "react-switch";
+// import "./Switch.css";
+import LightModeIcon from '@mui/icons-material/LightMode';
+import NightsStayIcon from '@mui/icons-material/NightsStay';
+import { themeSwitchStyles } from "./styles";
+const SwitchComponent = () => {
+  const [checked, setChecked] = useState(false);
+  const handleChange = (nextChecked: boolean | ((prevState: boolean) => boolean)) => {
+    setChecked(nextChecked);
+  };
+ 
+  return (
 
-/**
- * Styled Switch component for the theme switch.
- * 
- * This component is styled based on the selected theme mode.
- */
-const ThemeSwitch = styled(Switch)(({ theme }) => ({
-  // Styles for the checked switch
-  "& .MuiSwitch-switchBase.Mui-checked": {
-    // Set the color of the switch indicator to green in dark mode, yellow in light mode
-    color: theme.palette.mode === 'dark' ? "#76d14d" : "#f7c500",
-    // Styles for the hover state of the switch
-    "&:hover": {
-      // Set the background color of the switch indicator to semi-transparent green/yellow on hover
-      backgroundColor: alpha(theme.palette.mode === 'dark' ? "#76d14d" : "#f7c500", theme.palette.action.hoverOpacity),
-    },
-  },
-  // Styles for the track of the switch when it is checked
-  "& .MuiSwitch-switchBase.Mui-checked + .MuiSwitch-track": {
-    // Set the background color of the track to green in dark mode, yellow in light mode
-    backgroundColor: theme.palette.mode === 'dark' ? "#76d14d" : "#f7c500",
-  },
-}));
-
-export default ThemeSwitch
+        <ReactSwitch
+          checked={checked}
+          onChange={handleChange}
+          handleDiameter={30}
+          offColor="#abb4be"
+          onColor="#abb4be"
+          offHandleColor="#011f3b"
+          onHandleColor="#011f3b"
+          height={20}
+          width={45}
+          borderRadius={50}
+          activeBoxShadow="0px 0px 0px 0px white"
+          uncheckedIcon={<></>}
+          checkedIcon={<></>}
+          uncheckedHandleIcon={
+            <div
+              style={themeSwitchStyles.uncheckedHandleIcon}
+            >
+              <LightModeIcon htmlColor="white"/>
+            </div>
+          }
+          checkedHandleIcon={
+            <div
+              style={themeSwitchStyles.checkedHandleIcon}
+            >
+              <NightsStayIcon htmlColor="white"/>
+            </div>
+          }
+          className="react-switch"
+          id="small-radius-switch"
+        />
+  );
+};
+ 
+export default SwitchComponent;

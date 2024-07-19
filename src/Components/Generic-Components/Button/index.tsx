@@ -1,6 +1,7 @@
-import { Button, Typography } from "@mui/material"
+import { Button } from "@mui/material"
 import { ButtonInterface } from "./interface"
 import { buttonStyle } from "./style"
+import CustomText from "../Text"
 
 /**
  * CustomButton component
@@ -27,7 +28,7 @@ const CustomButton = ({ title, sx, fullWidth, variant, titleSize, fontWeight, co
         component={component}
         to={to}
     >
-        <Typography sx={{
+        <CustomText sx={{
             /**
              * Set the font weight of the text inside the button.
              * If not provided, 'bold' is used.
@@ -38,9 +39,9 @@ const CustomButton = ({ title, sx, fullWidth, variant, titleSize, fontWeight, co
              * If not provided, 18px is used.
              */
             fontSize: titleSize ? titleSize : '18px'
-        }}>
-            {title}
-        </Typography>
+        }}
+        content={title}
+        />
     </Button>
 }
 

@@ -8,6 +8,7 @@ import VisibilityOffOutlinedIcon from '@mui/icons-material/VisibilityOffOutlined
 import VisibilityOutlinedIcon from '@mui/icons-material/VisibilityOutlined';
 import { useState } from "react";
 import CustomButton from "../../Generic-Components/Button";
+import CustomText from "../../Generic-Components/Text";
 
 /**
  * AuthLayout component is the main layout for the authentication page.
@@ -43,9 +44,10 @@ const AuthLayout = () => {
                         <img src="/images/sunflow.png" alt="Logo" width="214" height="55" />
                         <Box sx={{ marginTop: 8, }}>
                             {/* Title */}
-                            <Typography sx={loginText}>
-                                Log in to your account
-                            </Typography>
+                            <CustomText
+                            sx={loginText}
+                            content="Log in to your account"
+                            />
                             {/* Login form */}
                             <Box component="form" noValidate sx={{ mt: 1, width: '100%' }}>
                                 {/* Username input */}
@@ -59,7 +61,7 @@ const AuthLayout = () => {
                                         label={
                                             <Box sx={inputLabel}>
                                                 <PermIdentityOutlinedIcon />
-                                                <Typography sx={inputLabelText} variant="subtitle1">Username</Typography>
+                                                <CustomText sx={inputLabelText} content="Username" variant="subtitle1" />
                                             </Box>
                                         }
                                         InputProps={{
@@ -81,7 +83,7 @@ const AuthLayout = () => {
                                         label={
                                             <Box sx={inputLabel}>
                                                 <LockOutlinedIcon />
-                                                <Typography sx={inputLabelText} variant="subtitle1">Password</Typography>
+                                                <CustomText sx={inputLabelText} content="Password"  variant="subtitle1" />
                                             </Box>
                                         }
                                         InputProps={{

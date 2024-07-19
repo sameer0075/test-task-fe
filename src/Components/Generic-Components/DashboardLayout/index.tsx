@@ -1,9 +1,9 @@
 import { FC, ReactNode } from 'react';
 import Sidebar from '../Sidebar';
-import DashboardLayoutRoot from './DashboardLayoutRoot';
-import DashboardLayoutWrapper from './DashboardLayoutWrapper';
-import DashboardLayoutContainer from './DashboardLayoutContainer';
-import DashboardLayoutContent from './DashboardLayoutContent';
+import DashboardLayoutContent from './styled-components/DashboardLayoutContent';
+import { DashboardLayoutContainer } from './styled-components/DashboardLayoutContainer';
+import DashboardLayoutRoot from './styled-components/DashboardLayoutRoot';
+import DashboardLayoutWrapper from './styled-components/DashboardLayoutWrapper';
 
 interface DashboardLayoutProps {
   children?: ReactNode;

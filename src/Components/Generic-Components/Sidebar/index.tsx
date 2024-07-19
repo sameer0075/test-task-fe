@@ -1,9 +1,8 @@
-import * as React from "react";
-import {useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 import Header from "../Header";
 import ThemeSwitch from "./ThemeSwitch";
-import Drawer from "./Drawer";
+import Drawer from "./styled-components/Drawer";
 import SidebarListItem from "./SidebarListItem";
 
 import Box from "@mui/material/Box";
@@ -21,6 +20,8 @@ import SettingsIcon from '@mui/icons-material/Settings';
 import NightlightRoundIcon from '@mui/icons-material/NightlightRound';
 import Brightness2Icon from '@mui/icons-material/Brightness2';
 import WbSunnyIcon from '@mui/icons-material/WbSunny';
+import { useState } from "react";
+import CustomSwitch from "../CustomSwitch";
 
 /**
  * Type definition for a subsection in the sidebar.
@@ -176,7 +177,8 @@ const Sidebar = () => {
   /**
    * The `open` state is used to control the width of the sidebar.
    */
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = useState(false);
+  const [mode, setMode] = useState<"light" | "dark">("light");
 
   /**
    * The current location of the user.
@@ -190,6 +192,14 @@ const Sidebar = () => {
   const handleDrawer = (isOpen: boolean) => {
     setOpen(isOpen);
   };
+
+  const handleMode = () => {
+    if (mode === "light") {
+      setMode("dark");
+    } else {
+      setMode("light");
+    }
+  }
 
   return (
     <Box sx={{ display: "flex" }}>
@@ -214,12 +224,13 @@ const Sidebar = () => {
                 <div key={itemIndex}>
                   <SidebarListItem key={itemIndex} item={item} location={location} open={open} />
                   {item.title === "Appearance" &&
-                    <ThemeSwitch
-                      checked={false}
-                      onChange={() => { }}
-                      icon={<Brightness2Icon htmlColor="black" />}
-                      checkedIcon={<WbSunnyIcon />}
-                    />
+                    <Box sx={{
+                      display: open ? 'visible' : 'none',
+                      ml: 5
+                    }}>
+                      <ThemeSwitch/>
+                    </Box>
+
                   }
                   {item.subSections && (
                     <List component="div" disablePadding>

@@ -1,6 +1,7 @@
 import { ListItem, ListItemButton, ListItemIcon, ListItemText, Tooltip, Typography } from "@mui/material";
 import { Link as RouterLink } from "react-router-dom";
 import { linkStyle, listItemStyle, listItemButtonStyle, listItemIconStyle, listItemTextStyle } from "./styles";
+import CustomText from "../Text";
 
 
 /**
@@ -45,12 +46,13 @@ const SidebarListItem = ({ item, open, location }: any) => {
               sx={() => listItemTextStyle(open)}
             >
               {/* Render the title of the item. */}
-              <Typography sx={{
+              <CustomText
+              sx={{
                 fontSize: isSection ? 'auto' : '14px',
                 paddingLeft:  !isSection ? '25px' : '0px',
-              }}>
-                {item.title}
-              </Typography>
+              }}
+              content={item.title}
+              />
             </ListItemText>
           </ListItemButton>
         </ListItem>
